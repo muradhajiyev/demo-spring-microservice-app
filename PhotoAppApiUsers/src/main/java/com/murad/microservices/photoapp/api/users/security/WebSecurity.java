@@ -33,7 +33,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
-		http.authorizeRequests().antMatchers("/**").hasIpAddress(environment.getProperty("gateway.ip"))
+		String gatewayIp = environment.getProperty("gateway.ip");
+		http.authorizeRequests().antMatchers("/**").hasIpAddress(gatewayIp)
 		.and()
 		.addFilter(getAuthenticationFilter());
 		http.headers().frameOptions().disable();

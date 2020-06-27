@@ -1,24 +1,18 @@
-package com.murad.microservices.photoapp.api.users.shared;
+package com.murad.microservices.photoapp.api.users.ui.model;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
-import com.murad.microservices.photoapp.api.users.ui.model.AlbumResponseModel;
-
-public class UserDto implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -8196938568428014185L;
-	
+public class UserResponseModel {
 	private String userId;
 	private String firstName;
 	private String lastName;
 	private String email;
-	private String password;
-	private String encryptedPassword;
-	private List<AlbumResponseModel> albums = new ArrayList<>();
+	private List<AlbumResponseModel> albums;
+	
+	
+	
+	public UserResponseModel() {
+	}
 	
 	
 	public String getUserId() {
@@ -45,25 +39,12 @@ public class UserDto implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getEncryptedPassword() {
-		return encryptedPassword;
-	}
-	public void setEncryptedPassword(String encryptedPassword) {
-		this.encryptedPassword = encryptedPassword;
-	}
 	public List<AlbumResponseModel> getAlbums() {
 		return albums;
 	}
 	public void setAlbums(List<AlbumResponseModel> albums) {
 		this.albums = albums;
 	}
-	
 	
 	
 }
